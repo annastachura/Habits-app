@@ -1,16 +1,98 @@
 @import "_normalize";
 @import "_variables";
-
-
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+    color: black;
+    background: white;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background: lightyellow;
+    &__title {
+        color: black;
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+        margin: 10px;
+    }
+    &__button {
+        height: 35px;
+        background: grey;
+        border-radius: 3px;
+        margin-left: 20px;
+        color: white;
+        border: none;
+        box-shadow: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    &__input {
+        height: 35px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+}
+
+.days {
+    background: cornsilk;
+    width: 100%;
+    padding: none;
+    &__list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        font-size: 10px;
+        padding: 6px;
+        font-weight: bold;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.habits {
+    background: oldlace;
+    &__list {
+        margin: 0;
+    }
+    &__item {
+        display: flex;
+        height: 50px;
+        align-items: center;
+    }
+    &__input {
+        flex-grow: 1;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    &__status {
+        background-image: url('/assets/img/close.svg');
+        background-size: 100% 100%;
+        object-fit: contain;
+        width: 20px;
+        height: 20px;
+        padding: 15px;
+    }
 }
