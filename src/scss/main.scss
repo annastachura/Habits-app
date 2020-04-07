@@ -21,8 +21,6 @@ body {
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
     background: lightyellow;
     &__title {
         color: black;
@@ -30,8 +28,11 @@ body {
         font-family: 'Lato', sans-serif;
         margin: 10px;
     }
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
     &__button {
-        height: 35px;
         background: grey;
         border-radius: 3px;
         margin-left: 20px;
@@ -41,9 +42,11 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
         margin-left: 10px;
+        padding: 6px;
+        width: 120px;
     }
     &__input {
-        height: 35px;
+        height: 50px;
         width: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -94,5 +97,9 @@ body {
         width: 20px;
         height: 20px;
         padding: 15px;
+        &--done {
+            background-image: url('/assets/img/check.svg');
+            fill: green;
+        }
     }
 }
