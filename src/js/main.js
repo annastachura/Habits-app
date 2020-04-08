@@ -15,11 +15,15 @@ if ('serviceWorker' in navigator) {
 }
 
 
-var habits = [];
+const json2 = localStorage.getItem("Data");
+var habits = JSON.parse(json2);
 
-
+if (habits == null) {
+    habits = [];
+}
 const input = document.querySelector('.header__input--js');
 const headerButton = document.querySelector('.header__button--js');
+showHabits();
 
 headerButton.addEventListener('click', function() {
     if (input.value) {
@@ -28,14 +32,33 @@ headerButton.addEventListener('click', function() {
     }
 });
 
+input.addEventListener('keyup', function(e) {
+    if (input.value && e.keyCode === 13) {
+        addNewHabit(input.value);
+        input.value = "";
+    }
+
+});
+
+
 function addNewHabit(title) {
+    const habitNames = habits.map(function(habit) {
+        return habit.name;
+    })
+    if (habitNames.includes(title)) {
+        return;
+    }
     const habit = {
         name: title,
         doneDates: [],
     }
     habits.push(habit);
     showHabits();
+    const json = JSON.stringify(habits);
+    localStorage.setItem('Data', json);
+
 }
+
 
 function toggleHabit(habit, date) {
     if (habit.doneDates.includes(date)) {
@@ -45,12 +68,16 @@ function toggleHabit(habit, date) {
         habits[index].doneDates.push(date);
     }
     showHabits();
+    const Json = JSON.stringify(habits);
+    localStorage.setItem('Data', Json);
+
+
+
+
     // const habitsStatus = document.querySelector('.habits__status');
     // const habitsStatusDone = document.querySelector('.habits__status--done');
     // habitsStatus.addEventListener('click', function() {
     // });
-
-
 }
 
 function showHabits() {
@@ -76,14 +103,26 @@ function showHabits() {
             span.addEventListener('click', function() {
                 toggleHabit(habit, dateString);
             })
-
         }
         habitsList.appendChild(habitLi);
-
     });
 }
 
-function ShowWeekDays(date) {
-    const daysList = document.querySelector('.days__list--js')
 
+
+function showWeekDays() {
+    const daysList = document.querySelector('.days__list--js')
+    var date = new Date();
+    date.setDate(date.getDate() - 6);
+    for (var i = 0; i < 7; i++) {
+        var li = document.createElement("li");
+        daysList.appendChild(li);
+        li.innerHTML = "pon";
+        li.classList.add("days__item");
+        const day = `${date.getDate()}.${date.getMonth()+1}`;
+        li.innerHTML = day;
+        date.setDate(date.getDate() + 1);
+    }
 }
+
+showWeekDays();
