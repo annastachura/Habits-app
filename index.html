@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Site title</title>
+    <meta name="description" content="Description" />
+
+    <!-- Title -->
+    <meta property="og:title" content="" />
+    <!-- OPTIONAL description. 2-4 sentences. -->
+    <meta property="og:description" content="" />
+    <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
+    <meta property="og:url" content="" />
+    <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
+    <meta property="og:image" content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png" />
+
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/pwa/icons/icon-192x192.png" />
+
+    <link rel="icon" type="image/png" href="assets/pwa/icons/icon-192x192.png" />
+
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <section class="header">
+        <h1 class="header__title">Nawyki</h1>
+        <span class="header__container">
+        <button class="header__button header__button--js">Dodaj nawyk</button>
+        <input class="header__input, header__input--js"></input>
+      </span>
+    </section>
+    <section class="days">
+        <ul class="days__list days__list--js">
+        </ul>
+    </section>
+    <section class="habits">
+        <ul class="habits__list habits__list--js">
+        </ul>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
