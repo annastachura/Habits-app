@@ -414,7 +414,7 @@ body {
     font-size: 20px;
     margin-left: 20px; }
   .habits__status {
-    background-image: url("assets/img/close.svg");
+    background-image: url("../assets/img/close.svg");
     background-size: 100% 100%;
     -o-object-fit: contain;
        object-fit: contain;
@@ -422,7 +422,7 @@ body {
     height: 20px;
     padding: 15px; }
     .habits__status--done {
-      background-image: url("assets/img/check.svg");
+      background-image: url("../assets/img/check.svg");
       fill: green; }
 
 /*# sourceMappingURL=main.css.map */
