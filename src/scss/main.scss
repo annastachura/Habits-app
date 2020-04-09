@@ -97,14 +97,14 @@ body {
         margin-left: 20px;
     }
     &__status {
-        background-image: url('/assets/img/close.svg');
+        background-image: url('../assets/img/close.svg');
         background-size: 100% 100%;
         object-fit: contain;
         width: 20px;
         height: 20px;
         padding: 15px;
         &--done {
-            background-image: url('/assets/img/check.svg');
+            background-image: url('../assets/img/check.svg');
             fill: green;
         }
     }
