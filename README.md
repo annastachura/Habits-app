@@ -1,9 +1,9 @@
-# wtf-gulp-starter
+# Habits app
 
-`npm install -g gulp-cli`
+## Aplikacja służy do dodawania nowych nawyków oraz do codziennego śledzenia efektów ich wykonywania. Pomaga przybliżać nas do określonego celu. 
 
-`npm install`
+![demo apki](readme/nawyki.png)
 
-`gulp`
+### Aby zacząć korzystać z aplikacji wejdź w link: https://annastachura.github.io/Habits-app/
 
-To publish your page using github pages use `npm run deploy`
+
