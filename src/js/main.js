@@ -126,3 +126,17 @@ function showWeekDays() {
 }
 
 showWeekDays();
+
+const popup = document.querySelector('.popup--js');
+
+const popButton = document.querySelector('.header__popButton');
+popButton.addEventListener('click', function() {
+
+    popup.classList.add('popup--visible');
+
+});
+
+const closeButton = document.querySelector('.popup__button--js');
+closeButton.addEventListener('click', function() {
+    popup.classList.remove('popup--visible');
+});
