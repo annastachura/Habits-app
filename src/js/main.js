@@ -40,6 +40,7 @@ input.addEventListener('keyup', function(e) {
 
 });
 
+var currentColor = "habits__item--black";
 
 function addNewHabit(title) {
     const habitNames = habits.map(function(habit) {
@@ -51,12 +52,13 @@ function addNewHabit(title) {
     const habit = {
         name: title,
         doneDates: [],
+        color: currentColor
     }
     habits.push(habit);
     showHabits();
     const json = JSON.stringify(habits);
     localStorage.setItem('Data', json);
-
+    currentColor = "habits__item--black";
 }
 
 
@@ -87,6 +89,8 @@ function showHabits() {
         var habitLi = document.createElement("li");
         habitLi.classList.add("habits__item");
         habitLi.innerHTML += `<span class="habits__input"> ${habit.name} </span>`
+        habitLi.classList.add(habit.color);
+
 
         var date = new Date();
         date.setDate(date.getDate() - 6);
@@ -139,4 +143,42 @@ popButton.addEventListener('click', function() {
 const closeButton = document.querySelector('.popup__button--js');
 closeButton.addEventListener('click', function() {
     popup.classList.remove('popup--visible');
+});
+
+
+const redButton = document.querySelector('.popup__item--red');
+redButton.addEventListener('click', function() {
+    currentColor = "habits__item--red";
+    popup.classList.remove('popup--visible');
+
+});
+
+const blueButton = document.querySelector('.popup__item--blue');
+blueButton.addEventListener('click', function() {
+    currentColor = "habits__item--blue";
+    popup.classList.remove('popup--visible');
+
+});
+
+
+
+const yellowButton = document.querySelector('.popup__item--yellow');
+yellowButton.addEventListener('click', function() {
+    currentColor = "habits__item--yellow";
+    popup.classList.remove('popup--visible');
+
+});
+
+const greenButton = document.querySelector('.popup__item--green');
+greenButton.addEventListener('click', function() {
+    currentColor = "habits__item--green";
+    popup.classList.remove('popup--visible');
+
+});
+
+const pinkButton = document.querySelector('.popup__item--pink');
+pinkButton.addEventListener('click', function() {
+    currentColor = "habits__item--pink";
+    popup.classList.remove('popup--visible');
+
 });

@@ -94,6 +94,24 @@ body {
         display: flex;
         height: 50px;
         align-items: center;
+        &--red {
+            color: red;
+        }
+        &--blue {
+            color: blue;
+        }
+        &--yellow {
+            color: peru;
+        }
+        &--black {
+            color: black;
+        }
+        &--green {
+            color: green;
+        }
+        &--pink {
+            color: pink;
+        }
     }
     &__input {
         flex-grow: 1;
